@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Samanta Carinelli · Instructora de Fitness Grupal en Bahía Blanca</title>
+<meta name="description" content="Samanta Carinelli, instructora de fitness grupal en Uno Bahía Club. Pilates Reformer y Mat, Stretching, Body Pump y Yoga. Clases grupales y particulares." />
+<meta name="theme-color" content="#12130f" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png" />
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Samanta Carinelli" />
+<meta property="og:url" content="https://samanta-carinelli-web.vercel.app/" />
+<meta property="og:title" content="Samanta Carinelli · Instructora de Fitness Grupal" />
+<meta property="og:description" content="Pilates Reformer y Mat, Stretching, Body Pump y Yoga. Clases grupales y particulares en Uno Bahía Club." />
+<meta property="og:image" content="https://samanta-carinelli-web.vercel.app/assets/img/og-cover.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Samanta Carinelli · Instructora de Fitness Grupal" />
+<meta name="twitter:description" content="Pilates Reformer y Mat, Stretching, Body Pump y Yoga en Uno Bahía Club." />
+<meta name="twitter:image" content="https://samanta-carinelli-web.vercel.app/assets/img/og-cover.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+<link rel="stylesheet" href="assets/css/styles.css?v=1" />
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top" aria-label="Samanta Carinelli, inicio">
+      Samanta<span>Carinelli</span>
+    </a>
+    <nav class="nav__links" aria-label="Navegación principal">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#disciplinas">Disciplinas</a>
+      <a href="#clases">Clases</a>
+      <a href="#video">Video</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn btn--accent nav__cta" target="_blank" rel="noopener"
+       href="https://api.whatsapp.com/send?phone=+5492915011288&text=Hola%20Samanta!%20Vi%20tu%20whatsapp%20en%20tu%20p%C3%A1gina%20web.%20Mi%20nombre%20es:">
+      Reservar clase
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navDrawer" aria-label="Abrir menú">
+      <i class="ph ph-list" aria-hidden="true"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Panel móvil, fuera del header: `.nav` usa backdrop-filter, que crea un containing
+     block propio para position:fixed y rompía el panel si quedaba anidado ahí.
+     Es un landmark separado (oculto por completo en desktop) para no duplicar la nav. -->
+<nav class="nav__drawer" id="navDrawer" aria-label="Navegación móvil">
+  <a href="#sobre-mi">Sobre mí</a>
+  <a href="#disciplinas">Disciplinas</a>
+  <a href="#clases">Clases</a>
+  <a href="#video">Video</a>
+  <a href="#contacto">Contacto</a>
+  <a class="btn btn--accent nav__drawer__cta" target="_blank" rel="noopener"
+     href="https://api.whatsapp.com/send?phone=+5492915011288&text=Hola%20Samanta!%20Vi%20tu%20whatsapp%20en%20tu%20p%C3%A1gina%20web.%20Mi%20nombre%20es:">
+    Reservar clase
+  </a>
+</nav>
+
+<main id="contenido">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero__inner">
+      <div class="hero__copy" data-reveal>
+        <h1 class="hero__title">FUERZA, ENERGÍA<br />Y MOVIMIENTO REAL</h1>
+        <p class="hero__sub">Pilates Reformer y Mat, Stretching, Body Pump y Yoga: clases grupales y particulares en Uno Bahía Club.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--accent" target="_blank" rel="noopener"
+             href="https://api.whatsapp.com/send?phone=+5492915011288&text=Hola%20Samanta!%20Vi%20tu%20whatsapp%20en%20tu%20p%C3%A1gina%20web.%20Mi%20nombre%20es:">
+            Reservar clase
+          </a>
+          <a class="btn btn--ghost" href="#disciplinas">Ver disciplinas</a>
+        </div>
+      </div>
+      <div class="hero__asset" data-reveal>
+        <img src="assets/img/samanta-hero.jpg" width="732" height="1100" alt="Samanta Carinelli entrenando con mancuernas en el gimnasio" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE MI -->
+  <section class="about" id="sobre-mi" data-reveal>
+    <div class="about__media">
+      <img class="about__img about__img--a" src="assets/img/samanta-clase.jpg" width="703" height="1100" alt="Samanta Carinelli dando una clase grupal con barra en Uno Bahía Club" />
+      <img class="about__img about__img--b" src="assets/img/samanta-hero.jpg" width="732" height="1100" alt="Samanta Carinelli haciendo remo con mancuerna" />
+    </div>
+    <div class="about__copy">
+      <h2>Hola, soy Samanta</h2>
+      <p>Doy clases de fitness grupal en Uno Bahía Club: Pilates Reformer y Mat, Stretching, Body Pump y Yoga. Cada clase está pensada para sumar fuerza, movilidad y energía sin perder la técnica.</p>
+      <p>Trabajo en grupo y también en formato particular, adaptando cada sesión a cómo llegás ese día.</p>
+      <a class="link-arrow" href="#clases">Conocé las clases <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="benefits" data-reveal>
+    <h2 class="section-title">Por qué entrenar con Samanta</h2>
+    <div class="benefits__grid">
+      <article class="benefit benefit--dark">
+        <i class="ph-fill ph-target" aria-hidden="true"></i>
+        <h3>Técnica antes que peso</h3>
+        <p>Cada ejercicio se explica y se corrige en el momento, para que el movimiento sea seguro desde el primer día.</p>
+      </article>
+      <article class="benefit">
+        <i class="ph-fill ph-shuffle" aria-hidden="true"></i>
+        <h3>Variedad real</h3>
+        <p>Reformer, mat, stretching, Body Pump y yoga: la semana de entrenamiento no se hace aburrida.</p>
+      </article>
+      <article class="benefit">
+        <i class="ph-fill ph-users-three" aria-hidden="true"></i>
+        <h3>Grupo que motiva</h3>
+        <p>Entrenar en clase suma una energía que sola cuesta mucho más sostener.</p>
+      </article>
+      <article class="benefit benefit--accent">
+        <i class="ph-fill ph-user-focus" aria-hidden="true"></i>
+        <h3>A tu ritmo</h3>
+        <p>Las clases particulares se arman según tu nivel, tu objetivo y tus tiempos.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CLASES EN UNO BAHIA CLUB -->
+  <section class="classes" id="clases" data-reveal>
+    <div class="classes__media">
+      <img src="assets/img/samanta-clase.jpg" width="703" height="1100" alt="Clase grupal de Body Pump dictada por Samanta Carinelli en Uno Bahía Club" loading="lazy" />
+    </div>
+    <div class="classes__copy">
+      <h2>Clases en Uno Bahía Club</h2>
+      <p class="classes__lead">Grupales o particulares, siempre con seguimiento real de tu progreso.</p>
+
+      <div class="classes__list">
+        <div class="classes__item">
+          <i class="ph-fill ph-users-three" aria-hidden="true"></i>
+          <div>
+            <h3>Clases grupales</h3>
+            <p>Pilates Mat, Stretching, Body Pump y Yoga dentro de la grilla de clases de Uno Bahía Club.</p>
+          </div>
+        </div>
+        <div class="classes__item">
+          <i class="ph-fill ph-user-focus" aria-hidden="true"></i>
+          <div>
+            <h3>Clases particulares</h3>
+            <p>Pilates Reformer y entrenamiento personalizado, uno a uno, con seguimiento de tu progreso.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="classes__footer">
+        <p><i class="ph-fill ph-map-pin" aria-hidden="true"></i> Uno Bahía Club, Bahía Blanca</p>
+        <a class="btn btn--accent" target="_blank" rel="noopener"
+           href="https://api.whatsapp.com/send?phone=+5492915011288&text=Hola%20Samanta!%20Vi%20tu%20whatsapp%20en%20tu%20p%C3%A1gina%20web.%20Mi%20nombre%20es:">
+          Reservar clase
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCIPLINAS -->
+  <section class="disciplines" id="disciplinas" data-reveal>
+    <h2 class="section-title">Disciplinas</h2>
+    <div class="disciplines__grid">
+      <article class="discipline discipline--photo" style="background-image:url('assets/img/samanta-clase.jpg')">
+        <i class="ph-fill ph-barbell" aria-hidden="true"></i>
+        <h3>Body Pump</h3>
+        <p>Trabajo con barra y peso libre en formato grupal, al ritmo de la clase.</p>
+      </article>
+      <article class="discipline discipline--dark">
+        <i class="ph-fill ph-arrows-left-right" aria-hidden="true"></i>
+        <h3>Pilates Reformer</h3>
+        <p>Resistencia de resortes sobre la máquina, control y postura.</p>
+      </article>
+      <article class="discipline">
+        <i class="ph-fill ph-person-simple-tai-chi" aria-hidden="true"></i>
+        <h3>Pilates Mat</h3>
+        <p>Control, core y movilidad trabajados en el piso, sin máquina.</p>
+      </article>
+      <article class="discipline">
+        <i class="ph-fill ph-wind" aria-hidden="true"></i>
+        <h3>Stretching</h3>
+        <p>Elongación y movilidad para cerrar la semana con el cuerpo suelto.</p>
+      </article>
+      <article class="discipline discipline--photo" style="background-image:url('assets/img/samanta-hero.jpg')">
+        <i class="ph-fill ph-flower-lotus" aria-hidden="true"></i>
+        <h3>Yoga</h3>
+        <p>Respiración, equilibrio y calma para bajar revoluciones.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="videos" id="video" data-reveal>
+    <h2 class="section-title">Así son las clases</h2>
+    <div class="videos__grid">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DYlHNk8OcH1/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DYvFFGzoqFn/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C1h0BuhrDxV/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CsL0vnNrqzr/" data-instgrm-version="14"></blockquote>
+    </div>
+    <a class="link-arrow" href="https://www.instagram.com/samantacarinelli/" target="_blank" rel="noopener">
+      Seguir en Instagram <i class="ph ph-arrow-right" aria-hidden="true"></i>
+    </a>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonials" data-reveal>
+    <h2 class="section-title">Lo que dicen las alumnas</h2>
+    <div class="testimonials__empty">
+      <i class="ph ph-chat-circle-text" aria-hidden="true"></i>
+      <p>Estamos sumando los primeros testimonios de las clases. Muy pronto vas a poder leerlos acá.</p>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="closing" data-reveal>
+    <div class="closing__overlay">
+      <h2>Sumate a la próxima clase</h2>
+      <p>Clases grupales y particulares en Uno Bahía Club. Escribile a Samanta y reservá tu lugar.</p>
+      <a class="btn btn--accent" target="_blank" rel="noopener"
+         href="https://api.whatsapp.com/send?phone=+5492915011288&text=Hola%20Samanta!%20Vi%20tu%20whatsapp%20en%20tu%20p%C3%A1gina%20web.%20Mi%20nombre%20es:">
+        Reservar clase
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot" id="contacto">
+  <div class="foot__inner">
+    <div class="foot__brand">
+      <p class="foot__name">Samanta<span>Carinelli</span></p>
+      <p>Instructora de fitness grupal</p>
+    </div>
+    <nav class="foot__links" aria-label="Navegación de pie de página">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#disciplinas">Disciplinas</a>
+      <a href="#clases">Clases</a>
+      <a href="#video">Video</a>
+    </nav>
+    <div class="foot__contact">
+      <p><i class="ph-fill ph-map-pin" aria-hidden="true"></i> Uno Bahía Club, Bahía Blanca</p>
+      <a href="https://www.instagram.com/samantacarinelli/" target="_blank" rel="noopener">
+        <i class="ph-fill ph-instagram-logo" aria-hidden="true"></i> @samantacarinelli
+      </a>
+      <a target="_blank" rel="noopener"
+         href="https://api.whatsapp.com/send?phone=+5492915011288&text=Hola%20Samanta!%20Vi%20tu%20whatsapp%20en%20tu%20p%C3%A1gina%20web.%20Mi%20nombre%20es:">
+        <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+  <div class="foot__legal">
+    <p>© <span id="yr">2026</span> Samanta Carinelli. Todos los derechos reservados.</p>
+    <p>Sitio web realizado por <a target="_blank" rel="noopener" href="https://agenciawebhispana.com/">Agencia Web Hispana</a></p>
+  </div>
+</footer>
+
+<a class="wa-float" target="_blank" rel="noopener"
+   href="https://api.whatsapp.com/send?phone=+5492915011288&text=Hola%20Samanta!%20Vi%20tu%20whatsapp%20en%20tu%20p%C3%A1gina%20web.%20Mi%20nombre%20es:"
+   aria-label="Reservar clase por WhatsApp">
+  <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+  <span>Reservar clase</span>
+</a>
+
+<script async src="//www.instagram.com/embed.js"></script>
+<script src="assets/js/main.js?v=1" defer></script>
+</body>
+</html>
