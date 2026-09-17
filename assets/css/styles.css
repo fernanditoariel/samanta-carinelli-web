@@ -465,16 +465,16 @@ p:last-child { margin-bottom: 0; }
 /* ---------- Video ---------- */
 .videos { max-width: 1240px; margin: 0 auto; padding: clamp(2rem, 5vw, 4rem) 1.5rem clamp(3rem, 6vw, 6rem); }
 .videos__grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
   margin-bottom: 2rem;
-  justify-items: center;
 }
-.videos__grid > * { min-width: 0; max-width: 100%; }
+.videos__grid > * { flex: 0 1 360px; min-width: 0; max-width: 100%; }
 .instagram-media { margin: 0 !important; width: 100% !important; max-width: 100% !important; }
 
-@media (max-width: 700px) { .videos__grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; } }
+@media (max-width: 700px) { .videos__grid { max-width: 420px; margin-left: auto; margin-right: auto; } }
 
 /* ---------- Testimonios (vacio) ---------- */
 .testimonials { max-width: 1240px; margin: 0 auto; padding: clamp(1rem, 4vw, 2rem) 1.5rem clamp(3rem, 6vw, 6rem); }
