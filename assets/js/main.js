@@ -8,6 +8,13 @@
   var hasIO = "IntersectionObserver" in window;
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // Background video in the Pilates philosophy section stays still for reduced motion.
+  var philosophyVideo = document.querySelector(".philosophy__video");
+  if (philosophyVideo && reduce) {
+    philosophyVideo.pause();
+    philosophyVideo.removeAttribute("autoplay");
+  }
+
   // Sticky nav goes solid once you scroll past the top.
   var nav = document.getElementById("nav");
   if (nav && hasIO) {
