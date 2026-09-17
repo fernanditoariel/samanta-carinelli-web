@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Genera favicon y og-card para Samanta Carinelli (fondo negro + acento lima)."""
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
 import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -41,18 +41,27 @@ def favicon():
 def og_card():
     w, h = 1200, 630
     src = Image.open(os.path.join(IMG, "uno-bahia-bodypump.jpg")).convert("RGB")
-    # Cover-fit crop to 1200x630, biased toward the top third (heads/faces).
+    # Crop a tighter slice centered on Samanta (right two-thirds of the frame)
+    # before covering 1200x630, so she reads bigger and the crowd recedes.
+    crop_left = int(src.width * 0.32)
+    src = src.crop((crop_left, 0, src.width, src.height))
     scale = max(w / src.width, h / src.height)
     rw, rh = round(src.width * scale), round(src.height * scale)
     src = src.resize((rw, rh), Image.LANCZOS)
-    top = min(int(rh * 0.28), rh - h)
+    top = min(int(rh * 0.06), rh - h)
     im = src.crop((round((rw - w) / 2), top, round((rw - w) / 2) + w, top + h))
 
-    # Dark gradient at the bottom for text legibility.
-    gradient = Image.new("L", (1, h), color=0)
+    # Whole-image blur + darken so the photo reads as a moody dark backdrop,
+    # not a busy crowd shot competing with the name.
+    im = im.filter(ImageFilter.GaussianBlur(6))
+    im = ImageEnhance.Brightness(im).enhance(0.4)
+    im = ImageEnhance.Contrast(im).enhance(1.1)
+
+    # Extra dark gradient at the bottom for text legibility.
+    gradient = Image.new("L", (1, h), color=60)
     for y in range(h):
-        t = max(0, (y - h * 0.35) / (h * 0.65))
-        gradient.putpixel((0, y), int(235 * t))
+        t = max(0, (y - h * 0.2) / (h * 0.8))
+        gradient.putpixel((0, y), int(60 + 175 * t))
     gradient = gradient.resize((w, h))
     overlay = Image.new("RGBA", (w, h), INK + (0,))
     overlay.putalpha(gradient)
@@ -60,12 +69,11 @@ def og_card():
 
     d = ImageDraw.Draw(im)
     d.rectangle([0, h - 14, w, h], fill=LIME)
-    f_name = font(68, bold=True)
-    f_role = font(26, bold=False)
-    d.text((70, 440), "SAMANTA", font=f_name, fill=PAPER)
-    d.text((70, 512), "CARINELLI", font=f_name, fill=LIME)
-    d.text((450, 460), "Instructora de fitness grupal\nPilates Reformer · Body Pump\nStretching · Abdominales",
-           font=f_role, fill=PAPER, spacing=12)
+    f_name = font(92, bold=True)
+    f_role = font(34, bold=False)
+    d.text((70, 355), "SAMANTA", font=f_name, fill=PAPER)
+    d.text((70, 458), "CARINELLI", font=f_name, fill=LIME)
+    d.text((72, 575), "Personal Trainer", font=f_role, fill=PAPER)
     im.save(os.path.join(IMG, "og-cover.jpg"), quality=88)
 
 if __name__ == "__main__":
