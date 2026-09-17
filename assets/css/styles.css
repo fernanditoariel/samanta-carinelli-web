@@ -331,8 +331,8 @@ p:last-child { margin-bottom: 0; }
 .disciplines { max-width: 1240px; margin: 0 auto; padding: clamp(3rem, 6vw, 6rem) 1.5rem; }
 .disciplines__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 220px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 280px;
   gap: 1.25rem;
 }
 .discipline {
@@ -354,7 +354,6 @@ p:last-child { margin-bottom: 0; }
 .discipline--photo {
   background-size: cover;
   background-position: center;
-  grid-row: span 2;
   color: var(--paper);
 }
 .discipline--photo::before {
@@ -370,13 +369,11 @@ p:last-child { margin-bottom: 0; }
 .discipline--photo p { color: var(--muted-dark); }
 
 @media (max-width: 980px) {
-  .disciplines__grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
-  .discipline--photo { grid-row: span 2; }
+  .disciplines__grid { grid-auto-rows: 240px; }
 }
 @media (max-width: 620px) {
   .disciplines__grid { grid-template-columns: 1fr; grid-auto-rows: auto; }
-  .discipline { min-height: 180px; }
-  .discipline--photo { grid-row: auto; min-height: 220px; }
+  .discipline { min-height: 200px; }
 }
 
 /* ---------- Filosofia Pilates ---------- */
