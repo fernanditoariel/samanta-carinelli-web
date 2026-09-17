@@ -18,8 +18,8 @@
   --radius-md: 18px;
   --shadow-1: 0 20px 50px rgba(18, 19, 15, 0.12);
   --shadow-dark: 0 20px 50px rgba(0, 0, 0, 0.45);
-  --font-display: "Sora", sans-serif;
-  --font-body: "Manrope", sans-serif;
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -200,8 +200,9 @@ p:last-child { margin-bottom: 0; }
   align-items: center;
 }
 .hero__title {
-  font-size: clamp(2.4rem, 5.2vw, 4.1rem);
-  line-height: 1.04;
+  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
 }
 .hero__sub {
   font-size: 1.1rem;
@@ -217,7 +218,7 @@ p:last-child { margin-bottom: 0; }
   aspect-ratio: 3 / 4;
   background: var(--ink);
 }
-.hero__asset img { width: 100%; height: 100%; object-fit: cover; }
+.hero__asset img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
 .hero__asset::after {
   content: "";
   position: absolute;
@@ -228,7 +229,7 @@ p:last-child { margin-bottom: 0; }
 
 @media (max-width: 860px) {
   .hero__inner { grid-template-columns: 1fr; }
-  .hero__asset { order: -1; aspect-ratio: 4 / 3; max-width: 480px; margin: 0 auto; }
+  .hero__asset { order: -1; aspect-ratio: 4 / 5; max-width: 420px; margin: 0 auto; }
 }
 
 /* ---------- Sobre mi ---------- */
@@ -376,6 +377,60 @@ p:last-child { margin-bottom: 0; }
   .disciplines__grid { grid-template-columns: 1fr; grid-auto-rows: auto; }
   .discipline { min-height: 180px; }
   .discipline--photo { grid-row: auto; min-height: 220px; }
+}
+
+/* ---------- Filosofia Pilates ---------- */
+.philosophy {
+  position: relative;
+  overflow: hidden;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+}
+.philosophy__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(18px) brightness(0.5) saturate(1.15);
+  transform: scale(1.12);
+}
+.philosophy__overlay {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(4rem, 10vw, 7rem) 1.5rem;
+  text-align: center;
+}
+.philosophy__overlay::before {
+  content: "";
+  position: absolute;
+  inset: -40% -20%;
+  z-index: -1;
+  background: radial-gradient(closest-side, rgba(18, 19, 15, 0.55), transparent);
+}
+.philosophy__quote p {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 3.4vw, 2.3rem);
+  line-height: 1.3;
+  color: var(--paper);
+  margin: 0 0 1.2rem;
+}
+.philosophy__quote cite {
+  display: block;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 0.98rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  .philosophy__video { display: none; }
+  .philosophy { background: var(--ink) url('../img/samanta-hero.jpg') center 20% / cover no-repeat; }
 }
 
 /* ---------- Video ---------- */
