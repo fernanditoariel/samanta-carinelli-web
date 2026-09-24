@@ -495,7 +495,7 @@ p:last-child { margin-bottom: 0; }
 @media (max-width: 700px) { .moments__grid { grid-template-columns: 1fr; } }
 
 /* ---------- Entrevista ---------- */
-.interview { max-width: 860px; margin: 0 auto; padding: 0 1.5rem clamp(3rem, 6vw, 6rem); text-align: center; }
+.interview { max-width: 860px; margin: 0 auto; padding: 0 1.5rem clamp(3rem, 6vw, 6rem); text-align: center; scroll-margin-top: 96px; }
 .interview__lead { max-width: 52ch; margin: 0 auto 2rem; font-size: 1.05rem; }
 .interview__frame {
   position: relative;
