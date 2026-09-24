@@ -8,14 +8,14 @@
   // A direct link like #entrevistas fights with the browser's own "keep the
   // anchor in view while the page keeps loading" behavior: lazy-loaded images
   // and the YouTube iframe near the target keep shifting the layout as they
-  // come into view, so the browser's native jump (and a single manual retry)
-  // can overshoot. Take over entirely: drop the hash so the browser stops
-  // chasing it, then keep re-aligning to the target every frame for a bit
-  // after load, until layout has actually settled.
-  var initialHash = location.hash;
+  // come into view, so the browser's native jump can overshoot and keeps
+  // re-chasing the target for as long as the layout keeps moving. The inline
+  // script in <head> already stripped the hash before the parser ever reached
+  // the target element, so the browser never latches onto it at all; we take
+  // over positioning entirely, using window.__initialHash it stashed for us.
+  var initialHash = window.__initialHash;
   if (initialHash) {
     var cleanUrl = location.pathname + location.search;
-    history.replaceState(null, "", cleanUrl);
     var hashTarget = null;
     var userScrolled = false;
     ["wheel", "touchstart", "keydown"].forEach(function (evt) {
