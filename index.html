@@ -2,6 +2,15 @@
 <html lang="es-AR">
 <head>
 <meta charset="utf-8" />
+<script>
+  // Strip the URL fragment before the browser parses the rest of the page,
+  // so it never latches onto id="entrevistas" and fights our own scroll
+  // positioning later (see main.js) as lazy content shifts the layout.
+  if (location.hash) {
+    window.__initialHash = location.hash;
+    history.replaceState(null, "", location.pathname + location.search);
+  }
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Samanta Carinelli · Instructora de Fitness Grupal en Bahía Blanca</title>
 <meta name="description" content="Samanta Carinelli, instructora de fitness grupal en Uno Bahía Club. Pilates Reformer, Stretching, Body Pump y Abdominales. Clases grupales y particulares." />
@@ -296,6 +305,6 @@
 </a>
 
 <script async src="//www.instagram.com/embed.js"></script>
-<script src="assets/js/main.js?v=7" defer></script>
+<script src="assets/js/main.js?v=8" defer></script>
 </body>
 </html>
