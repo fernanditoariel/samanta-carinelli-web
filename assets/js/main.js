@@ -24,15 +24,23 @@
     var alignToHash = function () {
       if (userScrolled) return;
       hashTarget = hashTarget || document.querySelector(initialHash);
-      if (hashTarget) hashTarget.scrollIntoView({ behavior: "instant", block: "start" });
+      if (hashTarget) {
+        hashTarget.scrollIntoView({ behavior: "instant", block: "start" });
+        history.replaceState(null, "", cleanUrl + initialHash);
+      }
     };
     window.addEventListener("load", function () {
       alignToHash();
-      history.replaceState(null, "", cleanUrl + initialHash);
-      var settleUntil = Date.now() + 2000;
+      var ro = "ResizeObserver" in window ? new ResizeObserver(alignToHash) : null;
+      if (ro) ro.observe(document.documentElement);
+      var settleUntil = Date.now() + 5000;
       (function tick() {
         alignToHash();
-        if (Date.now() < settleUntil) requestAnimationFrame(tick);
+        if (userScrolled || Date.now() >= settleUntil) {
+          if (ro) ro.disconnect();
+          return;
+        }
+        requestAnimationFrame(tick);
       })();
     });
   }
