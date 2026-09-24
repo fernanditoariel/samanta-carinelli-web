@@ -478,6 +478,41 @@ p:last-child { margin-bottom: 0; }
 @media (max-width: 700px) { .videos__grid { max-width: 420px; margin-left: auto; margin-right: auto; } }
 
 
+/* ---------- Momentos ---------- */
+.moments { max-width: 1240px; margin: 0 auto; padding: 0 1.5rem clamp(3rem, 6vw, 6rem); }
+.moments__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+.moments__grid img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+@media (max-width: 700px) { .moments__grid { grid-template-columns: 1fr; } }
+
+/* ---------- Entrevista ---------- */
+.interview { max-width: 860px; margin: 0 auto; padding: 0 1.5rem clamp(3rem, 6vw, 6rem); text-align: center; }
+.interview__lead { max-width: 52ch; margin: 0 auto 2rem; font-size: 1.05rem; }
+.interview__frame {
+  position: relative;
+  padding-top: 56.25%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--ink);
+  box-shadow: var(--shadow-1);
+}
+.interview__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* ---------- Cierre ---------- */
 .closing {
   position: relative;
